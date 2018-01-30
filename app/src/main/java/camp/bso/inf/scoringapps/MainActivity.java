@@ -1,6 +1,7 @@
 package camp.bso.inf.scoringapps;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout detailPersib, detailPersija;
     private TextView tvScorePersib, tvScorePersija;
-    private Button addScorePersib, addScorePersija, lessScorePersib, lessScorePersija, resetScore;
+    private Button addScorePersib, addScorePersija, lessScorePersib, lessScorePersija, resetScore, btnBerita;
 
     int scorePersib, scorePersija;
 
@@ -93,6 +94,16 @@ public class MainActivity extends AppCompatActivity {
                 tvScorePersib.setText(""+scorePersib);
             }
         });
+
+        btnBerita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                String url = "http://www.bola.com/indonesia/read/3243116/pesan-pasoepati-untuk-suporter-klub-8-besar-piala-presiden?medium=Headline&campaign=Headline_click_1";
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
     }
 
     public void initScore(){
@@ -114,5 +125,6 @@ public class MainActivity extends AppCompatActivity {
         lessScorePersija = findViewById(R.id.less_score_persija);
 
         resetScore = findViewById(R.id.reset_score);
+        btnBerita = findViewById(R.id.btn_berita);
     }
 }
