@@ -35,4 +35,13 @@
         android:textColor="#000"
         android:textSize="14sp" />
 
+    <TextView
+        android:id="@+id/link_sumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="sumber"
+        android:textColor="#0044ff"
+        android:textSize="14sp" />
+
 </LinearLayout>

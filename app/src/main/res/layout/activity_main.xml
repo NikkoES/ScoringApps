@@ -193,24 +193,34 @@
         android:layout_weight="0.4">
 
         <Button
-            android:id="@+id/reset_score"
+            android:id="@+id/btn_berita"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:background="#66ff61"
             android:textColor="#000"
-            android:text="RESET SCORE" />
+            android:text="BERITA" />
 
         <Button
-            android:id="@+id/btn_berita"
+            android:id="@+id/reset_score"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:background="#ffec5a"
             android:textColor="#000"
-            android:text="BERITA" />
+            android:text="RESET SCORE" />
+
+        <Button
+            android:id="@+id/btn_maps"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#66ff61"
+            android:textColor="#000"
+            android:text="LOKASI" />
 
     </LinearLayout>
 

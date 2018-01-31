@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout detailPersib, detailPersija;
     private TextView tvScorePersib, tvScorePersija;
-    private Button addScorePersib, addScorePersija, lessScorePersib, lessScorePersija, resetScore, btnBerita;
+    private Button addScorePersib, addScorePersija, lessScorePersib, lessScorePersija, resetScore, btnBerita, btnMaps;
 
     int scorePersib, scorePersija;
 
@@ -104,6 +104,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        btnMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("geo:-6.957563, 107.712083");
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                i.setPackage("com.google.android.apps.maps");
+                if(i.resolveActivity(getPackageManager())!=null){
+                    startActivity(i);
+                }
+            }
+        });
     }
 
     public void initScore(){
@@ -126,5 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
         resetScore = findViewById(R.id.reset_score);
         btnBerita = findViewById(R.id.btn_berita);
+        btnMaps = findViewById(R.id.btn_maps);
     }
 }
