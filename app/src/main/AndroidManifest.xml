@@ -19,6 +19,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".DetailPersibActivity" />
         <activity android:name=".DetailPersijaActivity" />
+        <activity android:name=".ListPertandinganActivity"></activity>
     </application>
 
 </manifest>
