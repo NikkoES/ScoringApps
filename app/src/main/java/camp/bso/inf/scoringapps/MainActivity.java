@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvScorePersib, tvScorePersija;
     private Button addScorePersib, addScorePersija, lessScorePersib, lessScorePersija, resetScore, btnBerita, btnMaps;
 
+    ImageView logoTimSatu, logoTimDua;
+    TextView namaTimSatu, namaTimDua;
+
     int scorePersib, scorePersija;
 
     @Override
@@ -23,7 +28,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //untuk enampilkan back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Scoring Board");
+
         bindView();
+
+        //untuk mengatur view dan menerima passing data dari intent sebelumnya
+        namaTimSatu.setText(getIntent().getStringExtra("namaTimSatu"));
+        namaTimDua.setText(getIntent().getStringExtra("namaTimDua"));
+        logoTimSatu.setImageResource(getIntent().getIntExtra("logoTimSatu",0));
+        logoTimDua.setImageResource(getIntent().getIntExtra("logoTimDua",0));
 
         initScore();
 
@@ -139,5 +154,20 @@ public class MainActivity extends AppCompatActivity {
         resetScore = findViewById(R.id.reset_score);
         btnBerita = findViewById(R.id.btn_berita);
         btnMaps = findViewById(R.id.btn_maps);
+
+        namaTimSatu = findViewById(R.id.nama_tim_satu);
+        namaTimDua = findViewById(R.id.nama_tim_dua);
+        logoTimSatu = findViewById(R.id.logo_tim_satu);
+        logoTimDua = findViewById(R.id.logo_tim_dua);
+    }
+
+
+    //fungsi back ketika tombol back diklik
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
